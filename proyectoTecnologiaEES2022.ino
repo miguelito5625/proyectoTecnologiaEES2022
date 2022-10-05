@@ -1,12 +1,12 @@
 //Proyecto tecnologia
 
-#define pin1MotorA D1
-#define pin2MotorA D2
-#define pin1MotorB D3
-#define pin2MotorB D4
+#define pin1MotorIzq D1
+#define pin2MotorIzq D2
+#define pin1MotorDer D3
+#define pin2MotorDer D4
 
-#define enableA D5
-#define enableB D6
+#define enableIzq D5
+#define enableDer D6
 
 #define sensorLineaIzq D7
 #define sensorLineaDer D8
@@ -20,10 +20,10 @@ int valorIzq = 0;
 int valorDer = 0;
 
 void setup() {
-  pinMode(pin1MotorA, OUTPUT);
-  pinMode(pin2MotorA, OUTPUT);
-  pinMode(pin1MotorB, OUTPUT);
-  pinMode(pin2MotorB, OUTPUT);
+  pinMode(pin1MotorIzq, OUTPUT);
+  pinMode(pin2MotorIzq, OUTPUT);
+  pinMode(pin1MotorDer, OUTPUT);
+  pinMode(pin2MotorDer, OUTPUT);
 
   pinMode(sensorLineaIzq, INPUT);
   pinMode(sensorLineaDer, INPUT);
@@ -54,37 +54,37 @@ void loop() {
 
 
 void adelante(){
-  analogWrite(enableA, velocidad);
-  analogWrite(enableB, velocidad);
-  digitalWrite(pin1MotorA,1);
-  digitalWrite(pin2MotorA,0);
-  digitalWrite(pin1MotorB,1);
-  digitalWrite(pin2MotorB,0);
+  analogWrite(enableIzq, velocidad);
+  analogWrite(enableDer, velocidad);
+  digitalWrite(pin1MotorIzq,1);
+  digitalWrite(pin2MotorIzq,0);
+  digitalWrite(pin1MotorDer,1);
+  digitalWrite(pin2MotorDer,0);
 }
 
 void izquierda(){
-  analogWrite(enableA, velocidad);
-  analogWrite(enableB, velocidad);
-  digitalWrite(pin1MotorA,1);
-  digitalWrite(pin2MotorA,0);
-  digitalWrite(pin1MotorB,1);
-  digitalWrite(pin2MotorB,0);
+  analogWrite(enableIzq, velocidad);
+  analogWrite(enableDer, velocidad);
+  digitalWrite(pin1MotorIzq,0);
+  digitalWrite(pin2MotorIzq,0);
+  digitalWrite(pin1MotorDer,1);
+  digitalWrite(pin2MotorDer,0);
 }
 
 void derecha(){
-  analogWrite(enableA, velocidad);
-  analogWrite(enableB, velocidad);
-  digitalWrite(pin1MotorA,1);
-  digitalWrite(pin2MotorA,0);
-  digitalWrite(pin1MotorB,1);
-  digitalWrite(pin2MotorB,0);
+  analogWrite(enableIzq, velocidad);
+  analogWrite(enableDer, velocidad);
+  digitalWrite(pin1MotorIzq,1);
+  digitalWrite(pin2MotorIzq,0);
+  digitalWrite(pin1MotorDer,0);
+  digitalWrite(pin2MotorDer,0);
 }
 
 void detener(){
-  analogWrite(enableA, velocidad);
-  analogWrite(enableB, velocidad);
-  digitalWrite(pin1MotorA,1);
-  digitalWrite(pin2MotorA,0);
-  digitalWrite(pin1MotorB,1);
-  digitalWrite(pin2MotorB,0);
+  analogWrite(enableIzq, velocidad);
+  analogWrite(enableDer, velocidad);
+  digitalWrite(pin1MotorIzq,0);
+  digitalWrite(pin2MotorIzq,0);
+  digitalWrite(pin1MotorDer,0);
+  digitalWrite(pin2MotorDer,0);
 }
