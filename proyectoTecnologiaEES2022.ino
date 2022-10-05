@@ -1,4 +1,4 @@
-//Proyecto tecnologia
+//Proyecto tecnologia profe Miguel Archila
 
 #define pin1MotorIzq D1
 #define pin2MotorIzq D2
