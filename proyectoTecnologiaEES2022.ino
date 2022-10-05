@@ -30,7 +30,7 @@ void setup() {
 }
 
 void loop() {
-  velocidad = (valorPotenciometro / 4)-6;
+  velocidad = (analogRead(potenciometro) / 4)-6;
   valorIzq = digitalRead(sensorLineaIzq);
   valorDer = digitalRead(sensorLineaDer);
   
