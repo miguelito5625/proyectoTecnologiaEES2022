@@ -20,6 +20,7 @@ int valorIzq = 0;
 int valorDer = 0;
 
 void setup() {
+  Serial.begin(115200);
   pinMode(pin1MotorIzq, OUTPUT);
   pinMode(pin2MotorIzq, OUTPUT);
   pinMode(pin1MotorDer, OUTPUT);
@@ -30,23 +31,29 @@ void setup() {
 }
 
 void loop() {
+  
   velocidad = (analogRead(potenciometro) / 4)-6;
   valorIzq = digitalRead(sensorLineaIzq);
   valorDer = digitalRead(sensorLineaDer);
-  
-  if(valorIzq == 0 && valorDer == 0){
-    adelante();
-  }
+  Serial.println("valorizq: " + String(valorIzq));
+  Serial.println("valorder: " + String(valorDer));
 
-  if(valorIzq == 1 && valorDer == 0){
-    izquierda();
+//  adelante();
+//  return;
+  
+  if(valorIzq == 1 && valorDer == 1){
+    adelante();
   }
 
   if(valorIzq == 0 && valorDer == 1){
     derecha();
   }
 
-  if(valorIzq == 0 && valorDer == 1){
+  if(valorIzq == 1 && valorDer == 0){
+    izquierda();
+  }
+
+  if(valorIzq == 0 && valorDer == 0){
     detener();
   }
   
